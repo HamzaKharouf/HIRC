@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Risk Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Health Insurance Risk Calculator</h1>
+        <form id="riskForm">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="0" max="120">
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required min="60" max="250">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required min="20" max="300">
+            </div>
+
+            <div class="form-group">
+                <label for="bloodPressure">Blood Pressure (systolic/diastolic):</label>
+                <input type="text" id="bloodPressure" name="bloodPressure" placeholder="e.g., 120/80" required pattern="\d{2,3}\/\d{2,3}">
+            </div>
+
+            <div class="form-group">
+                <label>Family Disease History:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="diabetes" name="diseases" value="diabetes">
+                        <label for="diabetes">Diabetes</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cancer" name="diseases" value="cancer">
+                        <label for="cancer">Cancer</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="alzheimers" name="diseases" value="alzheimers">
+                        <label for="alzheimers">Alzheimer's</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Calculate Risk</button>
+        </form>
+
+        <div id="result" class="result hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
