@@ -5,7 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Update CORS configuration for Azure
-app.use(cors());
+app.use(cors({
+    origin: 'https://hirc2025-e4h6f6grdnaubkh0.uaenorth-01.azurewebsites.net',
+    methods: ['GET', 'POST']
+}));
 app.use(express.json());
 app.use(express.static('.'));
 
