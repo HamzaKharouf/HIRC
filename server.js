@@ -2,13 +2,10 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
-// Standard configuration for local testing
-app.use(cors({
-    origin: 'http://localhost:3001',
-    methods: ['GET', 'POST']
-}));
+// Update CORS configuration for Azure
+app.use(cors());
 app.use(express.json());
 app.use(express.static('.'));
 
