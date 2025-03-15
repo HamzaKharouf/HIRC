@@ -36,7 +36,8 @@ document.getElementById('riskForm').addEventListener('submit', async (e) => {
 
     try {
         // All calculations are done on the server via API call
-        const response = await fetch('http://localhost:3001/calculate-risk', {
+        const apiUrl = window.location.origin;
+        const response = await fetch(`${apiUrl}/calculate-risk`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
